@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  form_id: 1
+  fecha_sal_ing: 2019-02-03 16:13:19
+  equipo_id: 1
+  area: MyString
+  concepto: MyText
+  empresa_id: 1
+  contrato_id: 1
+
+two:
+  form_id: 1
+  fecha_sal_ing: 2019-02-03 16:13:19
+  equipo_id: 1
+  area: MyString
+  concepto: MyText
+  empresa_id: 1
+  contrato_id: 1

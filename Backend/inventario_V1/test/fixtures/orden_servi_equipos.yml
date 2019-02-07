@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  consecutivo_id: 1
+  solici_id: 1
+  equipo_id: 1
+  razon_id: 1
+  recibido_id: 1
+  diagnostico_id: 1
+  labor_id: 1
+  entrega_equi_id: 1
+  nombre_pers1: MyString
+  nombre_pers2: MyString
+  nombre_pers3: MyString
+  visto_ing: MyString
+  nom_cargo_recibe: MyString
+  fecha_orden: 2019-02-03 16:24:09
+  recomenda_id: 1
+  mate_id: 1
+
+two:
+  consecutivo_id: 1
+  solici_id: 1
+  equipo_id: 1
+  razon_id: 1
+  recibido_id: 1
+  diagnostico_id: 1
+  labor_id: 1
+  entrega_equi_id: 1
+  nombre_pers1: MyString
+  nombre_pers2: MyString
+  nombre_pers3: MyString
+  visto_ing: MyString
+  nom_cargo_recibe: MyString
+  fecha_orden: 2019-02-03 16:24:09
+  recomenda_id: 1
+  mate_id: 1

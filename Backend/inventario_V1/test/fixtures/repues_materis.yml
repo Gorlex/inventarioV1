@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mate_id: 1
+  item: MyString
+  descripcion: MyText
+  unidad: 1
+  cantidad: 1
+
+two:
+  mate_id: 1
+  item: MyString
+  descripcion: MyText
+  unidad: 1
+  cantidad: 1

@@ -1,0 +1,124 @@
+
+Tutotial API con Ruby on rails y Mysql
+https://www.youtube.com/watch?v=QojnRc7SS9o
+
+Crear API con base de datos Mysql
+
+0) crear base de datos en Mysql:
+
+#Login Mysql:
+> mysql -u root -p
+
+#Crear BD:
+CREATE DATABASE inventario_v1;
+
+1) se crea el proyecto en RUBY
+
+>rails new inventario_V1 --api
+
+Se ingresa a la carpeta creada por el terminal
+
+se abre el programa de edición de texto y se abre la carpeta creada
+
+2) se configura la información de base de datos:
+
+se abre el archivo: config/database.yml
+
+se realizan los siguientes cambios y se agregan datos de conexión del Mysql:
+
+  adapter: mysql2
+  username: root
+  password: 3156497602
+  database: inventario_v1
+
+3) se instala la gema de mysql
+>gem install mysql2
+
+4) ir al archivo Gemfile y modificar:
+
+# gem file 'sqLite3'
+gem 'mysql2'
+#gem 'spring'
+#gem 'spring-watcher-listen', '~> 2.0.0'
+
+5) Probar funcionamiento de rails
+>rails s
+escribir en el navegador
+localhost/3000
+debe salir pantalla de saludo de Rails
+
+6) Crear modelos: van a contener las caracteristicas de las tablas en mysql
+
+>rails g model <nombre tabla> <columna 1>:<formato contenido>
+
+>rails g model contratos contrato_id:integer contrato:string fecha_contrato:date
+>rails g model diagnosticos diagnostico_id:integer diagnostico:text
+>rails g model empresas empresa_id:integer razon_nom:string telefono:string direccion:string contrato_id:integer
+>rails g model entregaequipos equi_opera_boolean equi_fuera:boolean entregado:boolean mante_preve:boolean mante_correc:boolean calibracion:boolean
+>rails g model formsaliingres form_id:integer fecha_sal_ing:datetime equipo_id:integer area:string concepto:text empresa_id:integer contrato_id:integer
+>rails g model identiequipos equipo_id:integer marca:string modelo:string serie:string inventario:string placa:string
+>rails g model laborejecutadas labor_id:integer labor:text
+>rails g model ordenserviequipos consecutivo_id:integer solici_id:integer equipo_id:integer razon_id:integer recibido_id:integer diagnostico_id:integer labor_id:integer entrega_equi_id:integer nombre_pers1:string nombre_pers2:string nombre_pers3:string visto_ing:string nom_cargo_recibe:string fecha_orden:datetime recomenda_id:integer mate_id:integer
+>rails g model razonsoliservis razon_id:integer razon_soli_servi:text
+>rails g model recibidoareaequipos recibido_id:integer recibido_por:string fecha_recibido:datetime persona_asign:string
+>rails g model recoobsers recomenda_id:integer recomen_observa:text
+>rails g model repuesmateris mate_id:integer item:string descripcion:text unidad:integer cantidad:integer
+>rails g model solicitudes solici_id:integer nombre_repor:string area:string ubicacion:string fecha_soli:datetime 
+
+-Se revisan los archivos de migración creados y se completan las tablas de bases de datos que posteriormente se van a crear
+
+-para señalar como primary key una tabla se adiciona lo siguiente a los archivos de migración:
+create_table :<nombre tabla>, id: false do |t|
+<nombre columna para primary key>, primary_key: true
+
+7) se migran las tablas a Mysql
+>rails db:migrate
+
+verificar en mysql la creación de las tablas
+>SHOW FULL TABLES;
+
+8) validar tablas en los modelos
+escribir la siguiente linea por cada columna creada en cada tabla del modelo
+>	validates :<nombre columna>, presence: true
+
+9) Opcional* llenar los valores con datos Dummie
+programar el archivo db/seed.rb
+agregar en el archivo Gemfile.rb
+>goup :development do
+>gem 'faker'
+>end
+
+10) actualizar gemas, escribir en la consola:
+>bundle install
+
+11) llenar tablas con datos Dummie, escribir en la consola:
+>rails db:seed
+
+12) Crear controlador
+
+-se crea una carpeta llamada api dentro de la carpeta app/controllers
+-crear una carpeta llamada v1 dentro de la carpeta app/controllers/api
+-se crea el archivo controlador de cada modelo:
+contraro_controller.rb
+-se adiciona la nueva ruta del controlador en el archivo routes.rb
+>resources :<nombre modelo>
+>resources :contrato
+
+Nota: realizar modificaciones en tablas desde Ruby:
+>rails g migration <nombre de migracion>
+>rails g migration CambioNombreTabla
+
+se modifica el archivo que se crea en migraciones: 
+Cambiar nombre de columnas:
+  	rename_column :<nombre tabla>, :<nombre viejo>, :<nombre nuevo>
+Cambiar nombre de tablas:
+	rename_table :<nombre antiguo>, :<nombre_nuevo>
+
+Nota al crear controlador:
+-todos los nombres dentro del modelo, el controlador y routes de las clases deben llamarse igual, todos en minuscula 
+y el mismo nombre que tiene la tabla en mysql. algunos solo cambian la primera letra en mayuscula solamente.
+
+ 
+ 
+
+

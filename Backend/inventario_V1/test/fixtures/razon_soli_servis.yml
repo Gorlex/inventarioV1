@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  razon_id: 1
+  razon_soli_servi: MyText
+
+two:
+  razon_id: 1
+  razon_soli_servi: MyText

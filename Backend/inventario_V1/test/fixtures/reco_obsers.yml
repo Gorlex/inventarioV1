@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  recomenda_id: 1
+  recomen_observa: MyText
+
+two:
+  recomenda_id: 1
+  recomen_observa: MyText

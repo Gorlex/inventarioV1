@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  recibido_id: 1
+  recibido_por: MyString
+  fecha_recibido: 2019-02-03 16:25:19
+  persona_asign: MyString
+
+two:
+  recibido_id: 1
+  recibido_por: MyString
+  fecha_recibido: 2019-02-03 16:25:19
+  persona_asign: MyString

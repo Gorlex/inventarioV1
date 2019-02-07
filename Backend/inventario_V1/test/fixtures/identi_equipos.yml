@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  equipo_id: 1
+  marca: MyString
+  modelo: MyString
+  serie: MyString
+  inventario: MyString
+  placa: MyString
+
+two:
+  equipo_id: 1
+  marca: MyString
+  modelo: MyString
+  serie: MyString
+  inventario: MyString
+  placa: MyString

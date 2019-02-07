@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  contrato_id: 1
+  contrato: MyString
+  fecha_contrato: 2019-02-03
+
+two:
+  contrato_id: 1
+  contrato: MyString
+  fecha_contrato: 2019-02-03

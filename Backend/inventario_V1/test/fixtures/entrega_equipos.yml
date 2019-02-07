@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  equi_opera_boolean: MyString
+  equi_fuera: false
+  entregado: false
+  mante_preve: false
+  mante_correc: false
+  calibracion: false
+
+two:
+  equi_opera_boolean: MyString
+  equi_fuera: false
+  entregado: false
+  mante_preve: false
+  mante_correc: false
+  calibracion: false
