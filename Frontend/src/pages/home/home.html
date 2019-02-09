@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2> Datos de un servidor externo</h2>
+  <ion-list>
+     <button ion-item *ngFor="let contrato of contratos"><!--contratos es la variable creada en home.ts -->
+      {{contrato.contrato}} - {{contrato.contrato_id}}
+    </button>
+  </ion-list>
+
+</ion-content>
