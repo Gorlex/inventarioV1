@@ -22,6 +22,13 @@ Rails.application.configure do
   # Apache or NGINX already handles this.
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
+#codigo para solucionar header
+ config.public_file_server.headers = {
+    # 'Access-Control-Allow-Origin' => '*',  # only for debugging
+    'Access-Control-Allow-Origin' => 'http://localhost:3000/api/v1/',
+    'Access-Control-Request-Method' => %w{GET OPTIONS}.join(",")}
+    #fin codigo para solucionar header
+    
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = 'http://assets.example.com'
 
