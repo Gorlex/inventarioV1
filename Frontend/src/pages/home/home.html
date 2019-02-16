@@ -7,11 +7,69 @@
 </ion-header>
 
 <ion-content padding>
-  <h2> Datos de un servidor externo</h2>
-  <ion-list>
+<h2>Base de datos</h2>
+<!-- listado de botones-->
+<button ion-button round icon-start>
+  <ion-icon name="list-box"></ion-icon>
+  Contratos
+</button>
+<p></p>
+<button ion-button round icon-start>
+    <ion-icon name="desktop"></ion-icon>
+    Equipos
+</button>
+<!-- FIN listado de botones-->
+  <h2> Contratos</h2>
+  <!-- <ion-list>
      <button ion-item *ngFor="let contrato of contratos"><!--contratos es la variable creada en home.ts -->
-      {{contrato.contrato}} - {{contrato.contrato_id}}
+      <!--<h3>Id del contrato: </h3>
+      {{contrato.contrato_id}}
+      <h3>Contrato: </h3>
+      {{contrato.contrato}}
     </button>
-  </ion-list>
+  </ion-list> -->
+  
+  
+    <ion-item lines="full" *ngFor="let contrato of contratos">
+      <ion-icon name="alert" item-start></ion-icon>
+      <ion-label>Id: {{contrato.contrato_id}}</ion-label>
+      
+    </ion-item>
 
-</ion-content>
+    <ion-item *ngFor="let contrato of contratos">
+        <ion-icon name="list-box" item-start></ion-icon>
+        <ion-label>Nombre: {{contrato.contrato}}</ion-label>
+    </ion-item>
+<h3>Actualizar datos</h3>
+<form (ngSubmit)="logForm()">
+<ion-item *ngFor="let contrato of contratos">
+    <ion-label>Id</ion-label>
+    <ion-input type="number" value="{{contrato.contrato_id}}"></ion-input>
+  </ion-item>
+
+  <ion-item *ngFor="let contrato of contratos">
+       <ion-label>Nombre contrato</ion-label>
+       <ion-input type="text" value="{{contrato.contrato}}"></ion-input>
+         </ion-item>
+
+         <button ion-button type="submit">Enviar</button>
+        </form>
+<ion-item *ngFor="let contrato of contratos">
+  <p>Operaciones</p>
+  <button ion-button>Añadir</button>
+</ion-item>
+<ion-item>
+<button ion-button [hidden]="visibleEdit" (click)="edit(contrato)">Editar</button>
+<button ion-button [hidden]="visibleUpdate" (click)="execute(this.Addcontrato)">Actualizar</button>
+<button ion-button (click)="delete(contrato.contrato_id)">Eliminar</button>
+</ion-item>
+
+<ion-item>
+  <ion-label color="primary" stacked>Contrato</ion-label>
+
+
+</ion-item>
+
+
+
+  </ion-content>

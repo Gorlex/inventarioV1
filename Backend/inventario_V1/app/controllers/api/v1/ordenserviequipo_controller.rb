@@ -3,20 +3,24 @@ module Api
 		class OrdenserviequipoController < ApplicationController
 			def index
 				ordenserviequipo = Ordenserviequipo.order('created_at DESC');
-				render json: {status: 'SUCCESS', message: 'Loaded ordenserviequipos', data: ordenserviequipo}, status: :ok
+				#render json: {status: 'SUCCESS', message: 'Loaded ordenserviequipos', data: ordenserviequipo}, status: :ok
+				render json: contrato, status: :ok
 			end #end index
 			def show #hace busqueda por id en la BD de ordenserviequipo
 				ordenserviequipo = Ordenserviequipo.find(params[:id])
 				
-				render json: {status: 'SUCCESS', message: 'Loaded ordenserviequipo', data: ordenserviequipo}, status: :ok
+				#render json: {status: 'SUCCESS', message: 'Loaded ordenserviequipo', data: ordenserviequipo}, status: :ok
+				render json: contrato, status: :ok
 			end #end show
 			def create
 				ordenserviequipo = Ordenserviequipo.new(ordenserviequipo_params)
 
 				if ordenserviequipo.save
-				render json: {status: 'SUCCESS', message: 'Saved ordenserviequipo', data: ordenserviequipo}, status: :ok
+				#render json: {status: 'SUCCESS', message: 'Saved ordenserviequipo', data: ordenserviequipo}, status: :ok
+				render json: contrato, status: :ok
 				else 
-				render json: {status: 'ERROR', message: 'Ordenserviequipo not saved', data: ordenserviequipo.errors}, status: :unprocessable_entity
+				#render json: {status: 'ERROR', message: 'Ordenserviequipo not saved', data: ordenserviequipo.errors}, status: :unprocessable_entity
+				render json: contrato, status: :unprocessable_entity
 			end #end if
 
 			end #end create
@@ -24,16 +28,19 @@ module Api
 			def destroy #funcion para eliminar registro en la BD
 			ordenserviequipo = Ordenserviequipo.find(params[:id])
 			ordenserviequipo.destroy
-			render json: {status: 'SUCCESS', message: 'Deleted ordenserviequipo', data: ordenserviequipo}, status: :ok
+			#render json: {status: 'SUCCESS', message: 'Deleted ordenserviequipo', data: ordenserviequipo}, status: :ok
+			render json: contrato, status: :ok
 
 			end #end destroy
 
 			def update #actualiza o modifica registro en BD
 				ordenserviequipo = Ordenserviequipo.find(params[:id])
 				if ordenserviequipo.update_attributes(ordenserviequipo_params)
-				render json: {status: 'SUCCESS', message: 'Updated ordenserviequipo', data: ordenserviequipo}, status: :ok
+				#render json: {status: 'SUCCESS', message: 'Updated ordenserviequipo', data: ordenserviequipo}, status: :ok
+				render json: contrato, status: :ok
 				else
-				render json: {status: 'ERROR', message: 'ordenserviequipo not Updated', data: ordenserviequipo.errors}, status: :unprocessable_entity
+				#render json: {status: 'ERROR', message: 'ordenserviequipo not Updated', data: ordenserviequipo.errors}, status: :unprocessable_entity
+				render json: contrato, status: :unprocessable_entity
 				end #end if
 
 			end #end update

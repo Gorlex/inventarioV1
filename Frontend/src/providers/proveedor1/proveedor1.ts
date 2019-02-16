@@ -19,6 +19,13 @@ export class Proveedor1Provider {
     return this.http.get('http://localhost:3000/api/v1/contrato');
     //return this.http.get('https://jsonplaceholder.typicode.com/users');
   }
+  addDatos(data:any){
+    return this.http.post('http://localhost:3000/api/v1/contrato',data);
+    }
+  //updateDatos(data:any){
+   // return this.http.put('http://localhost:3000/api/v1/contrato'+contrato_id,data);
+  //}  
+
 
 
 }
